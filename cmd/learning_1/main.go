@@ -35,12 +35,13 @@ func main() {
 		"bottom_line": 4,
 		"early_five":  5,
 	}
-	d, ok := claimTypeOrder["early_five"]
-	if ok {
-		fmt.Printf("value found %v \n", d)
-	} else {
-		fmt.Println("value was not found")
-	}
+
+	// d, ok := claimTypeOrder["early_five"]
+	// if ok {
+	// 	fmt.Printf("value found %v \n", d)
+	// } else {
+	// 	fmt.Println("value was not found")
+	// }
 
 	sort.Slice(prizes, func(i, j int) bool {
 		if prizes[i].Amount != prizes[j].Amount {
