@@ -3,8 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello world")
-	fmt.Println("this is excellent")
-	var myString = 'h'
-	fmt.Println(myString)
+	var intArr = []int{1, 2, 3}
+	fmt.Println(intArr)
+	fmt.Println(intArr[len(intArr)-1], len(intArr), cap(intArr))
+    intArr = append(intArr, 4)
+	fmt.Println(intArr)
 }
