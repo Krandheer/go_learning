@@ -51,6 +51,7 @@ func understandingMutex() {
 func userInput() {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Printf("input your value: ")
+	// whatever we input by keyboard to scanner it is taken as string
 	scanner.Scan()
 	input := scanner.Text()
 	fmt.Printf("you entered %v \n", input)
