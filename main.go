@@ -11,6 +11,8 @@ func fib(n int, ch chan int){
 
 
 func main() {
+	// channel keeps listening for value until it is closed, we have length 10 channel but we keep receiving values
+	// so it is not getting overflown
 	ch := make(chan int, 10)
 	go fib(15, ch)
 	for i := range ch{
