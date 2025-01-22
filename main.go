@@ -9,7 +9,7 @@ package main
 // 	close(ch)
 // }
 
-func fib2(c chan int, quit chan int){
+func fib2(c, quit chan int){
 	x,y :=0,1
 	for {
 		select {
