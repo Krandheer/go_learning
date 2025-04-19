@@ -9,19 +9,18 @@ package main
 // 	close(ch)
 // }
 
-func fib2(c, quit chan int){
-	x,y :=0,1
+func fib2(c, quit chan int) {
+	x, y := 0, 1
 	for {
 		select {
 		case c <- x:
 			x, y = y, x+y
-		case <- quit:
+		case <-quit:
 			println("Quit")
 			return
 		}
 	}
 }
-
 
 func main() {
 
@@ -33,15 +32,27 @@ func main() {
 	// 	println(i)
 	// }
 
-	c := make(chan int)
-	quit := make(chan int)
-	go func(){
-		for i := 0; i<15; i++{
-			println(<-c)
+	// c := make(chan int)
+	// quit := make(chan int)
+	// go func() {
+	// 	for i := 0; i < 15; i++ {
+	// 		println(<-c)
+	// 	}
+	// 	quit <- 0
+	// }()
+	// fib2(c, quit)
+
+	whomAmI := func(i interface{}) {
+		switch t := i.(type) {
+		case int:
+			println("int")
+		case string:
+			println("string")
+		default:
+			println("unknown", t)
 		}
-		quit <- 0
-	}()
-	fib2(c, quit)
+
+	}
+	whomAmI("randheer")
 
 }
-
