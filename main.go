@@ -43,15 +43,14 @@ func main() {
 	// fib2(c, quit)
 
 	whomAmI := func(i interface{}) {
-		switch t := i.(type) {
+		switch i.(type) {
 		case int:
 			println("int")
 		case string:
 			println("string")
 		default:
-			println("unknown", t)
+			println("unknown")
 		}
-
 	}
 	whomAmI("randheer")
 
