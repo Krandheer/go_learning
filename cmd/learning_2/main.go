@@ -59,6 +59,6 @@ func userInput() {
 }
 
 func main() {
-	// understandingMutex()
-	userInput()
+	understandingMutex()
+	// userInput()
 }
